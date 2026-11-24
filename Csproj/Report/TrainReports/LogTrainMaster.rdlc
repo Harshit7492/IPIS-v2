@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+	<Body>
+		<ReportItems>
+			<!-- Data Table - Train Master Log Report -->
+			<Tablix Name="Tablix1">
+				<TablixBody>
+					<TablixColumns>
+						<!-- 1. LOG DATE -->
+						<TablixColumn>
+							<Width>1.2in</Width>
+						</TablixColumn>
+						<!-- 2. TRAIN NO -->
+						<TablixColumn>
+							<Width>0.8in</Width>
+						</TablixColumn>
+						<!-- 3. TRAIN NAME -->
+						<TablixColumn>
+							<Width>2.0in</Width>
+						</TablixColumn>
+						<!-- 4. DESTINATION -->
+						<TablixColumn>
+							<Width>0.8in</Width>
+						</TablixColumn>
+						<!-- 5. ARR TIME -->
+						<TablixColumn>
+							<Width>0.75in</Width>
+						</TablixColumn>
+						<!-- 6. DEP TIME -->
+						<TablixColumn>
+							<Width>0.75in</Width>
+						</TablixColumn>
+						<!-- 7. PF -->
+						<TablixColumn>
+							<Width>0.5in</Width>
+						</TablixColumn>
+						<!-- 8. RUNNING DAYS -->
+						<TablixColumn>
+							<Width>1.0in</Width>
+						</TablixColumn>
+						<!-- 9. TRAIN TYPE -->
+						<TablixColumn>
+							<Width>0.9in</Width>
+						</TablixColumn>
+						<!-- 10. CATEGORY -->
+						<TablixColumn>
+							<Width>0.9in</Width>
+						</TablixColumn>
+						<!-- 11. STATUS -->
+						<TablixColumn>
+							<Width>0.6in</Width>
+						</TablixColumn>
+					</TablixColumns>
+					<TablixRows>
+						<!-- Header Row -->
+						<TablixRow>
+							<Height>0.25in</Height>
+							<TablixCells>
+								<!-- 1. LOG DATE HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_LogDate">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>LOG DATE</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 2. TRAIN NO HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_TrainNo">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>TRAIN NO</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 3. TRAIN NAME HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_TrainName">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>TRAIN NAME</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Left</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>6pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 4. DESTINATION HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_Destination">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>DESTINATION</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 5. ARR TIME HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_ArrTime">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>ARR TIME</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 6. DEP TIME HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_DepTime">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>DEP TIME</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 7. PF HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_Platform">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>PF</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 8. RUNNING DAYS HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_RunningDays">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>RUNNING DAYS</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 9. TRAIN TYPE HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_TrainType">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>TRAIN TYPE</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 10. CATEGORY HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_Category">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>CATEGORY</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 11. STATUS HEADER -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="Header_Status">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>STATUS</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>Bold</FontWeight>
+																<Color>#FFFFFF</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>#1E3A8A</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+							</TablixCells>
+						</TablixRow>
+						<!-- Data Row -->
+						<TablixRow>
+							<Height>0.25in</Height>
+							<TablixCells>
+								<!-- 1. LOG DATE DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="LOG_DATE">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!LOG_DATE.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<Format>dd-MMM-yyyy HH:mm</Format>
+																<Color>#475569</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 2. TRAIN NO DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TRAIN_NUMBER">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!TRAIN_NUMBER.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>SemiBold</FontWeight>
+																<Color>#334155</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 3. TRAIN NAME DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TRAIN_NAME_ENGLISH">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!TRAIN_NAME_ENGLISH.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<Color>#1E293B</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Left</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>6pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 4. DESTINATION DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="DESTINATION_CODE">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!DESTINATION_CODE.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<Color>#334155</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 5. ARR TIME DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="ARRIVAL_TIME">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!ARRIVAL_TIME.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<Color>#334155</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 6. DEP TIME DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="DEPARTURE_TIME">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!DEPARTURE_TIME.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<Color>#334155</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 7. PF DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="PLATFORM_NUMBER">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!PLATFORM_NUMBER.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>SemiBold</FontWeight>
+																<Color>#334155</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 8. RUNNING DAYS DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="RUNNING_DAYS">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!RUNNING_DAYS.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<Color>#334155</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 9. TRAIN TYPE DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TRAIN_TYPE">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!TRAIN_TYPE.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<Color>#334155</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 10. CATEGORY DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TRAIN_CATEOGARY">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=Fields!TRAIN_CATEOGARY.Value</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<Color>#334155</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<!-- 11. STATUS DATA -->
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="STATUS">
+											<CanGrow>true</CanGrow>
+											<KeepTogether>true</KeepTogether>
+											<Paragraphs>
+												<Paragraph>
+													<TextRuns>
+														<TextRun>
+															<Value>=IIF(Fields!STATUS.Value = 1, "Active", IIF(Fields!STATUS.Value = 0, "Inactive", CStr(Fields!STATUS.Value)))</Value>
+															<Style>
+																<FontFamily>Segoe UI</FontFamily>
+																<FontSize>8pt</FontSize>
+																<FontWeight>SemiBold</FontWeight>
+																<Color>=IIF(Fields!STATUS.Value = 1, "#166534", "#991B1B")</Color>
+															</Style>
+														</TextRun>
+													</TextRuns>
+													<Style>
+														<TextAlign>Center</TextAlign>
+													</Style>
+												</Paragraph>
+											</Paragraphs>
+											<Style>
+												<Border>
+													<Color>#9CA3AF</Color>
+													<Style>Solid</Style>
+												</Border>
+												<BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#F8FAFC", "#FFFFFF")</BackgroundColor>
+												<VerticalAlign>Middle</VerticalAlign>
+												<PaddingLeft>4pt</PaddingLeft>
+												<PaddingRight>4pt</PaddingRight>
+												<PaddingTop>4pt</PaddingTop>
+												<PaddingBottom>4pt</PaddingBottom>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+							</TablixCells>
+						</TablixRow>
+					</TablixRows>
+				</TablixBody>
+				<TablixColumnHierarchy>
+					<TablixMembers>
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+						<TablixMember />
+					</TablixMembers>
+				</TablixColumnHierarchy>
+				<TablixRowHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<KeepWithGroup>After</KeepWithGroup>
+						</TablixMember>
+						<TablixMember>
+							<Group Name="Details" />
+						</TablixMember>
+					</TablixMembers>
+				</TablixRowHierarchy>
+				<DataSetName>LogTrainMasterDataset</DataSetName>
+				<Top>0in</Top>
+				<Left>0in</Left>
+				<Height>0.50in</Height>
+				<Width>10.2in</Width>
+				<Style>
+					<Border>
+						<Color>#9CA3AF</Color>
+						<Style>Solid</Style>
+					</Border>
+				</Style>
+			</Tablix>
+		</ReportItems>
+		<Height>0.8in</Height>
+		<Style />
+	</Body>
+	<Width>10.2in</Width>
+	<Page>
+		<LeftMargin>0.1in</LeftMargin>
+		<RightMargin>0.1in</RightMargin>
+		<TopMargin>0in</TopMargin>
+		<BottomMargin>0in</BottomMargin>
+		<Style />
+	</Page>
+	<AutoRefresh>0</AutoRefresh>
+	<DataSources>
+		<DataSource Name="LogTrainMasterDataset">
+			<ConnectionProperties>
+				<DataProvider>System.Data.DataSet</DataProvider>
+				<ConnectString>/* Local Connection */</ConnectString>
+			</ConnectionProperties>
+			<rd:DataSourceID>5c1103c8-1033-4df5-a740-1011883be123</rd:DataSourceID>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="LogTrainMasterDataset">
+			<Query>
+				<DataSourceName>LogTrainMasterDataset</DataSourceName>
+				<CommandText>/* Local Query */</CommandText>
+			</Query>
+			<Fields>
+				<Field Name="TRAIN_NUMBER">
+					<DataField>TRAIN_NUMBER</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="TRAIN_NAME_ENGLISH">
+					<DataField>TRAIN_NAME_ENGLISH</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="DESTINATION_CODE">
+					<DataField>DESTINATION_CODE</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="ARRIVAL_TIME">
+					<DataField>ARRIVAL_TIME</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="DEPARTURE_TIME">
+					<DataField>DEPARTURE_TIME</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="PLATFORM_NUMBER">
+					<DataField>PLATFORM_NUMBER</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="RUNNING_DAYS">
+					<DataField>RUNNING_DAYS</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="TRAIN_TYPE">
+					<DataField>TRAIN_TYPE</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="TRAIN_CATEOGARY">
+					<DataField>TRAIN_CATEOGARY</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="STATUS">
+					<DataField>STATUS</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+				<Field Name="ID">
+					<DataField>ID</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+				<Field Name="LOG_DATE">
+					<DataField>LOG_DATE</DataField>
+					<rd:TypeName>System.DateTime</rd:TypeName>
+				</Field>
+			</Fields>
+			<rd:DataSetInfo>
+				<rd:DataSetName>LogTrainMasterDataset</rd:DataSetName>
+				<rd:SchemaPath>D:\Harshit workspace\IPISv2\Csproj\ReportDataSets\LogTrainMasterDataset.xsd</rd:SchemaPath>
+				<rd:TableName>LOGTRAINMASTER</rd:TableName>
+				<rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+				<rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+				<rd:TableAdapterName>LOGTRAINMASTERTableAdapter</rd:TableAdapterName>
+			</rd:DataSetInfo>
+		</DataSet>
+	</DataSets>
+	<rd:ReportUnitType>Inch</rd:ReportUnitType>
+	<rd:ReportID>f3c7a2b0-8801-443b-a6fe-4f18bb84d291</rd:ReportID>
+</Report>

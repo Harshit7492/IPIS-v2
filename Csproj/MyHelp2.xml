@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationHelp>
+
+	<Introduction>
+INTRODUCTION
+
+Integrated Passenger Information System (IPIS) is a single-system control that provides audio and visual information to passengers through multiple displays spread across the entire station.
+	</Introduction>
+
+	<OnlineTrains>
+ONLINE TRAINS
+
+Online Trains is the main operating screen of the Passenger Information System (PIS). It shows the real-time status of the trains currently available in the system.
+
+It shows the key train details:
+• Train Number and Train Name
+• Train Status
+• Scheduled Arrival and Departure Time (SAT / SDT)
+• Delay
+• Expected Arrival and Departure Time (EAT / EDT)
+• Platform Number
+• Coach Guidance
+• Announcement Status
+
+Operators can select a train to view and manage its coach composition, control display boards (TADB / CGDB), make passenger announcements and perform NTES updates.
+
+This screen is the central place for monitoring and managing train operations efficiently.
+	</OnlineTrains>
+
+	<LinkStatus>
+LINK STATUS
+
+The Link Status tab is used to monitor the communication status of the devices connected to the Passenger Information System (PIS).
+
+It shows the connection status of Platform Data Controllers (PDC), Train Arrival/Departure Display Boards (TADDB) and Coach Guidance Display Boards (CGDB), so operators can find communication or connection problems.
+
+PDC Status
+• Shows the status of all Platform Data Controllers.
+• Columns: PDC Name, Platform, IP Address and Current Status.
+• Used to check that each controller is connected and working.
+
+TADDB Status
+• Shows the communication details of the Train Arrival/Departure Display Boards.
+• Columns: Board Name, Installed Location, Platform, PDC IP, Board IP and Current Status.
+
+CGDB Status
+• Shows the communication details of the Coach Guidance Display Boards.
+• Columns: PDC Name, PDC IP, Platform, CGDB IP and Current Status.
+• Used to monitor the connectivity and operation of each CGDB.
+	</LinkStatus>
+
+	<PA>
+PA (PASSENGER ANNOUNCEMENT)
+
+The PA tab is used to manage the audio files and recorded announcements of the Passenger Information System.
+
+It lets operators browse and play pre-recorded audio files, create new voice recordings and manage the announcement files used for passenger information.
+
+		<Music>
+MUSIC
+
+The Music section lets operators browse and manage pre-recorded audio files.
+
+• Play, Pause and Stop an audio file.
+• Delete audio files that are no longer required for passenger announcements.
+		</Music>
+
+		<Recording>
+RECORDING
+
+The Recording section lets operators create and manage their own voice recordings.
+
+• Enter a recording title.
+• Start a new recording.
+• Refresh the recording list.
+• Play, Pause, Stop or Delete recorded audio files as required.
+		</Recording>
+	</PA>
+
+	<MessageTab>
+		<Message>
+MESSAGES
+
+The Messages tab is used to create and manage the passenger information messages shown on the station display boards.
+It supports multilingual messages, audio files and display colour settings.
+
+Add Message
+• Create messages in English, Hindi and Regional language.
+• Upload the matching audio file for each message.
+• Save the message so it can be shown on the display boards.
+• Existing messages can also be edited or deleted.
+		</Message>
+
+		<ColorStatus>
+COLOUR STATUS
+
+The Colour Status tab is used to set the colours for train statuses and display board elements, so information on the display boards is clear and consistent.
+		</ColorStatus>
+	</MessageTab>
+
+	<SettingTab>
+SETTINGS
+
+The Settings tab is used to configure and manage the master data of the Passenger Information System (PIS).
+It has options to maintain train information, coach composition, station details, board settings, NTES updates and the other system settings needed for smooth operation.
+
+The Settings tab has the following modules:
+• Train Entry
+• Coach Setup
+• Coach Legend Data Entry
+• Station Code Entry
+• Admin Setting
+• Board Setting
+• Train Entry from NTES
+• Train Masking
+
+		<TrainEntry>
+TRAIN ENTRY
+
+Holds the train and coach details:
+• Train Number
+• Train Name (English, Hindi and Regional language)
+• Arrival Time and Departure Time
+• Platform Number
+• Running Days
+• Coach Information
+
+Buttons
+• Save : saves new or updated train information in the database.
+• Delete : removes the selected train from the database.
+• First / Prev / Next / Last : moves through the saved trains in the database.
+• Close : closes Train Entry.
+
+			<CoachSetup>
+COACH SETUP
+
+The Coach Setup tab is used to create and change the coach composition of the selected train.
+Users can add, remove, rearrange and reverse the coaches, then save the coach sequence.
+			</CoachSetup>
+		</TrainEntry>
+
+		<CoachLegendEntry>
+COACH LEGEND ENTRY
+
+Holds the coach legend details:
+• Legend Code
+• Legend English
+• Legend Hindi
+
+Buttons
+• Add New : adds a new coach legend to the list.
+• Save : saves new or updated coach legend information in the database.
+• Delete : removes the selected coach legend from the database.
+• Search : searches for a legend code in the database.
+• Close : closes Coach Legend Entry.
+		</CoachLegendEntry>
+
+		<StationCodeEntry>
+STATION CODE ENTRY
+
+Holds the station details:
+• Station Code
+• Station Name English
+• Station Name Hindi
+• Station Name Regional
+
+Buttons
+• Add New : adds a new station to the list.
+• Save : saves new or updated station information in the database.
+• Delete : removes the selected station from the database.
+• Close : closes Station Code Entry.
+		</StationCodeEntry>
+
+		<BoardSetting>
+BOARD SETTING
+
+Board Setting shows the Central Data Switch (CDS) connected to the system.
+
+Each CDS has 8 ports. Each port can be configured as one of these:
+• Platform Data Controller (PDC)
+• Multi Line Display Board (MLDB)
+• At a Glance Display Board (AGDB)
+• Coach Guidance Display Board (CGDB)
+
+Add a board
+• Click an empty port (Not Used) and choose Add.
+• Select one of the four board types and fill in the board details.
+
+Delete a board
+• Click a configured port and choose Delete.
+		</BoardSetting>
+
+		<AdminSetting>
+ADMIN SETTING
+
+The Admin Setting panel configures the station layout, announcement languages, network links and automatic display schedules.
+
+Station Setting
+• MAX COACH : maximum number of coaches allowed in a train.
+• MAX PLATEFORM : number of platforms in the station layout.
+• MAX ETHERNET PORT : number of ethernet ports available for network hardware.
+• ANNOUNCE LANGUAGE and REGIONAL LANGUAGE : languages used for announcements and board displays.
+• STATION NAME and STATION CODE : name and code of this station.
+• PLATEFORM END 1 and PLATEFORM END 2 : names of the two platform ends.
+• NTES PASS KEY : key used to connect securely to the National Train Enquiry System (NTES).
+
+Automatic Functionality
+• START UP : starts the application automatically.
+• IS MASTER : sets this computer as the main (master) controller.
+• AUTO INTENSITY : changes the display board brightness automatically.
+• DAY and NIGHT SETTINGS : brightness level and start time for day and for night.
+
+Integration Modules
+• Railway Server Connectivity Settings : settings for the connection to the railway server.
+• Third Party Integration : connects external hardware, systems or software to the station database.
+		</AdminSetting>
+
+		<TrainThroughNts>
+TRAIN ENTRY FROM NTES
+
+Fetches train information directly from the National Train Enquiry System (NTES), which reduces manual data entry.
+
+Steps
+1. Enter the Train Number of the required train.
+2. Click Fetch / Train Entry to get the train information.
+3. Check the fetched details and correct them if required.
+4. Click Save to add the train to the application database.
+
+Information fetched
+• Train Number
+• Train Name
+• Train Type
+• Source Station
+• Destination Station
+• Arrival Time
+• Departure Time
+
+Notes
+• An active NTES connection is required to fetch train details.
+• If the train is not available in NTES, no data is shown.
+• Make sure the fetched information is correct before saving.
+		</TrainThroughNts>
+
+		<TrainMask>
+TRAIN MASKING
+
+The Train Masking screen lets operators temporarily hide specific trains from the station's public display boards.
+
+Mask a train
+1. Enter the train number in the Train No field.
+2. Enter the reason in the Remarks field.
+3. Click + ADD.
+
+Masked trains list
+• Shows every masked train with its number, name, reason and the time it was masked.
+• Delete Selected : select a train and click to unmask it, so it shows on the boards again.
+• Refresh : reloads the list.
+		</TrainMask>
+	</SettingTab>
+
+	<UserControl>
+USER CONTROL
+
+User Control is used to create new users, assign access rights and change the settings of existing users.
+
+Change Existing User
+• Change the password and access rights of the selected user.
+• Delete User : deletes the selected user.
+• Save : saves the user information.
+• Close : closes User Settings.
+
+		<AddNewUser>
+ADD NEW USER
+
+The Add New User tab manages login details and access levels for system operators.
+
+Steps
+1. Enter the login ID in the User Name field.
+2. Enter the Password and Confirm Password.
+3. Select the role from the Access Type list.
+4. Tick the Active checkbox.
+5. Click Save to create the user, or Reset to clear the fields.
+
+User Details
+• The grid at the bottom shows all saved users.
+• Edit : change the user's details or active status.
+• Del : permanently deletes the user.
+		</AddNewUser>
+
+		<ManageAccess>
+MANAGE ACCESS
+
+The Manage Access tab sets which features each user role (Access Type) is allowed to use.
+
+Steps
+1. Enter the role name in the Access Type box.
+2. Tick the Active checkbox.
+3. Under Select Privileges, tick the allowed features (for example Train Entry, Board Setting, Play Announcement).
+4. Click Save to store the permissions, or Reset to clear the selection.
+
+The grid at the bottom shows the permissions of every role, so you can see which role can view or change each screen.
+		</ManageAccess>
+	</UserControl>
+
+	<CAP>
+CAP (COMMON ALERTING PROTOCOL)
+
+The CAP tab handles urgent safety warnings sent by the National and State Disaster Management authorities.
+
+• The system connects to the C-DOT APIs and receives alerts automatically during emergencies such as floods, cyclones or pandemics.
+• Each warning appears as an alert card showing the message text, severity level and active time.
+• Emergency messages are shown on the bottom line of the station's passenger display boards.
+
+Buttons
+• Override : immediately shows the alert on the station display boards.
+• Preview : shows how the alert text will look before it is displayed.
+• Close : removes the alert card when the emergency is over.
+	</CAP>
+
+	<Reports>
+REPORTS
+
+1. VDC Log Report
+Detailed records of the display data sent to each station display board by the VDC (Video Display Controller).
+• Includes train schedules, platform numbers, coach positions and train statuses (for example On Time, Delayed).
+• Used to check what was sent to each board, trace operator actions and confirm active data for each display unit.
+
+2. CGDB Send Data Report
+Tracks the coach sequences sent to the platform Coach Guidance Display Boards (CGDB).
+• Includes train number, train date, coach sequence (engine, general, sleeper, AC coaches), platform number and operator details.
+• Used to confirm that the correct coach positions were sent to the platform boards.
+
+3. TADB Send Data Report
+Logs the data sent to the main station arrival and departure boards (TADB).
+• Includes log time, user role (Operator, Supervisor, Admin), scheduled arrival/departure time, train status (for example Right Time, Delayed, Rescheduled, Cancelled), board ID and result (SUCCESS or FAILED).
+• Used to troubleshoot display network failures and check public train schedule updates.
+
+4. Announce Data Report
+Logs the automatic and manual announcements made on the station Public Address (PA) system.
+• Includes time, train number and name, scheduled arrival/departure time, train status (for example Arrived, Departed, Late), platform number and the user who made the announcement.
+• Used as an audit log of passenger announcements.
+
+5. User Login Report
+Audit trail of user access to the application.
+• Includes user ID, user name, login and logout time and access level.
+• Used to track operator sessions and monitor system security.
+	</Reports>
+
+	<HSR>
+HEALTH STATUS REPORT (HSR)
+
+The HSR tab shows the working condition of all LED display boards in the station in real time.
+It helps operators and technical staff quickly find faulty screens and make sure passenger information is displayed correctly.
+
+Live Preview
+• Shows a live copy of what is currently displayed on each physical board (such as Single Line and Multi Line Display Boards).
+• Shows board details such as IP address and platform number, so the board message can be checked from the monitor.
+
+LED Sort Matrix
+• Shows a grid of every LED pixel on a display board to find hardware problems.
+• If every LED is working, the board status shows "All OK".
+• If an LED fails, the exact faulty pixel is marked in red so technicians can fix it.
+	</HSR>
+
+	<VDC>
+VDC (VIDEO DISPLAY CONTROLLER)
+
+The VDC tab controls media playback and schedules advertisements or information content on the station video displays.
+
+VDC Control
+• Upload and manage media files such as images, videos or text messages.
+• For each entry, set the advertisement type, file path, play duration, play count and start/end date.
+• Edit, delete, preview or activate media files from the media table.
+
+Playlist Management
+• Group media files into automatic playback sequences (playlists).
+• Create playlists, set start and end times and set the number of repeats.
+• Assign media items to play continuously on the selected station displays.
+	</VDC>
+	<AboutUs>
+		IPISv2
+		APP VERSION : {APP_VERSION}
+		Vardaan Electronics Industries Pvt. Ltd. is an ISO 9001-certified company established in 2021, specializing in railway electronics and advanced passenger information and communication systems. Our expertise spans Rolling Stock and Railway Infrastructure, including Passenger Information Systems (PIS), Integrated Passenger Information Systems (IPIS), Public Address (PA) Systems, infotainment solutions, CCTV surveillance, and customized electronic products.
+
+		Driven by innovation, quality, and engineering excellence, we are committed to delivering reliable, efficient, and customer-focused solutions that enhance passenger experience, operational efficiency, and safety across the railway and transportation sector.
+
+		• We, the employees of Vardaan Electronics Industries Pvt. Ltd., will give our customers total satisfaction in terms of quality, cost and on-time delivery.
+		• We will continuously improve product quality by upgrading technology and training our employees.
+
+		Our QUALITY POLICY is grounded in our basic values, business ethics and uncompromising standards of high performance.
+
+		For further information, please contact:
+
+		CORPORATE OFFICE
+		Plot No. 184, Block-A, Sector-63, Noida, U.P. (INDIA)
+		Phone : +91-120-2245814
+		Email : info@vardaanindustries.in
+		Website : https://www.vardaanindustries.in
+
+		WORK ADDRESS
+		Plot No. 184, Block-A, Sector-63, Noida, U.P. (INDIA)
+		Phone : +91-120-2245814
+		Email : info@vardaanindustries.in
+		Website : https://www.vardaanindustries.in
+
+		Vardaan Electronics Industries Pvt. Ltd.
+		Innovating Railway Electronics. Connecting the Future.
+	</AboutUs>
+
+</ApplicationHelp>
